@@ -1,0 +1,20 @@
+.result-container {
+  display: flex;
+  background-color: rgb(250,234,177);
+  margin-left: 20px;
+  border: 2px solid black;
+  padding: 10px 30px;
+}
+
+.result-container-table {
+  background-color: rgb(255,247,218);
+  padding: 0 10px;
+  border: 3px solid black;
+  box-shadow: -3px 3px black;
+}
+
+.result-container-table tr {
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+}

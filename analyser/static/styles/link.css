@@ -1,0 +1,15 @@
+.direct-to {
+    text-align: center;
+}
+
+.direct-to a{
+  color: gray;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.direct-to a:hover {
+    color: silver;
+}

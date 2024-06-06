@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/general.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/loading.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/error.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/link.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='icons/title-icon.png') }}">
+    <title>WildReview</title>
+  </head>
+  <body>
+    <div class="content-container">
+
+      <!-- Waiting Content -->
+      <div id="loading-overlay" style="display: none;">
+        <div class="loading-message">
+          <div class="loading-message-header"></div>
+          <div class="loading-message-text">
+            <p>Уже анализируем ваш товар!</p>
+            <p>Пожалуйста, подождите...</p>
+          </div>
+          <img class="loading-message-gif" src="{{ url_for('static', filename='icons/animation-icon.gif') }}" alt="Loading...">
+          <div class="loading-message-fact">
+            <p class="loading-message-fact-title">А вы знали, что:</p>
+            <div id="loading-message-fact-text" class="loading-message-fact-text"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Content -->
+      <div class="project-info-container">
+        <img class="project-info-logo" src="{{ url_for('static', filename='icons/logo-icon.png') }}">
+        <p class="project-info-name">WildReview.</p>
+        <p class="project-info-description">узнай всё про желаемый продукт</p>
+      </div>
+      <form method="POST">
+        {{ form.hidden_tag() }}
+        <img class="form-icon" src="{{ url_for('static', filename='icons/article-icon.svg') }}">
+        {{ form.article(class="form-input", placeholder="Введите Артикул Товара") }}
+        {{ form.submit(class="form-send-btn") }}
+      </form>
+
+      <!-- Comments Link -->
+      <div class="direct-to">
+        <a href="{{ url_for('comments_page') }}" >анализировать отзыв отдельно &rarr;</a>
+      </div>
+
+      <!--- Error Content -->
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+              <div id="error-container" class="error-container">
+                <div class="error-container-header">
+                  <p>ERROR</p>
+                  <button onclick="hide_error();">X</button>
+                </div>
+                <div class="error-container-text">{{ message }}</div>
+              </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <!-- Result Content -->
+      {% if show_data %}
+        <div class="result-container">
+          <p>DATA HERE</p>
+        </div>
+      {% endif%}
+
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts/loading.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/fact_randomiser.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/hide_error.js') }}"></script>
+  </body>
+</html>
