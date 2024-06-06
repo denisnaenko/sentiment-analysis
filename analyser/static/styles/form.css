@@ -1,0 +1,88 @@
+.project-info-container {
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.project-info-logo {
+  top: -120px;
+  left: 195px;
+  width: 150px;
+  position: absolute;
+}
+
+.project-info-name {
+  font-family: Poppins, Arial;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.project-info-description {
+  letter-spacing: 1px;
+}
+
+form {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.form-icon {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+}
+
+.form-input {
+  background-color: rgb(249, 250, 251);
+  border: 2px solid rgb(227,54,208);
+  border-radius: 7px;
+  height: 35px;
+  width: 400px;
+  padding-left: 35px;
+  box-shadow: 4px 5px rgb(87,74,104);
+}
+.form-input:focus {
+  outline-color: rgb(227,54,208);
+  outline-offset: -1px;
+  outline-style: solid;
+}
+.form-input::placeholder {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.form-send-btn {
+  margin-left: -10px;
+  font-weight: 600;
+  height: 41px;
+  padding: 0px 10px;
+  letter-spacing: 0.6px;
+  color: white;
+  background-color: rgb(225,25,175);
+  background-color: rgb(200,63,169);
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border: none;
+  box-shadow: 4px 5px rgb(87,74,104);
+  cursor: pointer;
+}
+
+@media (min-width: 0) and (max-width: 450px) {
+  .form-input {
+    width: 170px;
+  }
+  .project-info-logo {
+    left: 85px;
+  }
+}
+
+@media (min-width: 451px)  and (max-width: 600px) {
+  .form-input {
+    width: 250px;
+  }
+  .project-info-logo {
+    left: 120px;
+  }
+}

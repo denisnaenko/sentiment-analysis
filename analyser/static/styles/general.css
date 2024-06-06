@@ -1,0 +1,13 @@
+body {
+  background-color: rgb(230,223,240);
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 150px;
+}
+
+p {
+  margin: 0;
+}
