@@ -6,6 +6,11 @@
   padding: 10px 30px;
 }
 
+.result-container-article {
+    margin-left: 20px;
+    width: 300px;
+}
+
 .result-container-table {
   background-color: rgb(255,247,218);
   padding: 0 10px;

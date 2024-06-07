@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/loading.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/form.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/error.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/result.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/link.css') }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,14 +70,19 @@
         {% endif %}
       {% endwith %}
 
-      <!-- Result Content -->
-      {% if show_data %}
-        <div class="result-container">
-          <p>DATA HERE</p>
-        </div>
-      {% endif%}
-
     </div>
+
+    <!-- Result Content -->
+    {% if show_data %}
+      <div class="result-container-article">
+        <table class="result-container-table">
+          <tr>
+            <th>Ключевый фразы на товар:</th>
+            <td>{{ keywords.keyphrases }}</td>
+          </tr>
+        </table>
+      </div>
+    {% endif%}
 
     <script src="{{ url_for('static', filename='scripts/loading.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/fact_randomiser.js') }}"></script>
